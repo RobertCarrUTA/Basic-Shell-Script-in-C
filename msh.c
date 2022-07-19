@@ -23,9 +23,7 @@
 
 
 /*
-
     Name: Robert Carr
-
 */
 
 #define _GNU_SOURCE
@@ -46,15 +44,9 @@
 */
 #define WHITESPACE " \t\n"
 
-
 #define MAX_COMMAND_SIZE 255	// The maximum command-line size
 
 #define MAX_NUM_ARGUMENTS 10	// Mav shell only supports ten arguments
-
-	// Hopefully it is alright to add this, I did not
-	// get the !n command to work.
-	//
-	// Thought I would add this to let you know before hand on what to expect.
 
 int main()
 {
@@ -122,9 +114,7 @@ int main()
             token_count++;
         }
 		
-		
         ///////// Shell Functionality /////////
-
 
         // This allows us to hit enter and msh> will print on a new line.
         // Without it, we drown in segfaults. Segfaults, we don't enjoy those...
@@ -199,12 +189,6 @@ int main()
                 }
             }
         }
-        /*
-		else if (token[0] == "!")
-        {
-            strcpy( token[0], );
-        }
-        */
         else
         {
             pid_t pid = fork( );
@@ -214,8 +198,8 @@ int main()
                 // it only shows one pid, then the rest are emtpy
                 // The listpid code follows same reasoning as history loop.
 				
-                pid_list[pid_index++] = getpid();			// Found out that doing this before the fork with
-                if( pid_index > 14 ) pid_index = 0;			// pid_list[] = fork() would cause two programs to run
+                pid_list[pid_index++] = getpid();    // Found out that doing this before the fork with
+                if( pid_index > 14 ) pid_index = 0;  // pid_list[] = fork() would cause two programs to run
                 if(strcmp(token[0], arguments[3]) == 0)
                 {
                     for(int i = 0; i < 15; i++)
@@ -262,4 +246,3 @@ int main()
     }
     return 0;
 }
-
