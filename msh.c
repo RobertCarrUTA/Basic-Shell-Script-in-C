@@ -148,8 +148,6 @@ int main()
         arguments[5] = ( char * ) malloc( strlen( "cd" ) );
 
         // strncpy gave truncation warnings, so I instead used strcpy.
-        // Again, I did this because it was how it was on your GitHub
-        // but I think I should've done it another way.
         strcpy( arguments[0], "ls");
         strcpy( arguments[1], "-l");
         strcpy( arguments[2], "ps");	
