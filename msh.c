@@ -214,14 +214,9 @@ int main()
                     keep execvp happy, so probably best to place this here
                     to make it happy
                    */
+			
                     exit(EXIT_SUCCESS);
                 }
-
-                // I was confued on this part, using execvp to search all the paths you wanted
-                // us to search in, in the order you gave us. If I tried to search those paths
-                // without execvp, it would tell me "Permission denied". Apparently it is a 
-                // secret club and I couldn't get in. So I just used execvp. Although, does 
-                // execvp() search in those paths in that order by default?
 				
                 // This for loop goes through our tokens we typed in, and executes them with
                 // the help of execvp(). This also handles the "invalid option, try help"
